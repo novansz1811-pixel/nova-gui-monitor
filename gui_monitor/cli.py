@@ -28,6 +28,21 @@ import sys
 import os
 
 
+def _configure_stdio():
+    """Keep Unicode output from crashing on legacy Windows consoles."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if not reconfigure:
+            continue
+        try:
+            reconfigure(encoding="utf-8", errors="replace")
+        except (OSError, ValueError):
+            try:
+                reconfigure(errors="replace")
+            except (OSError, ValueError):
+                pass
+
+
 def _parse_region(s: str) -> tuple[int, int, int, int]:
     """解析区域字符串 "x,y,w,h" 。"""
     parts = s.split(",")
@@ -451,6 +466,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main():
     """CLI 入口。"""
+    _configure_stdio()
+
     parser = build_parser()
     args = parser.parse_args()
     

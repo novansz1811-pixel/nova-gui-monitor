@@ -1,0 +1,66 @@
+# Workflow Recipe: 微信发送消息
+# 从 2026-05-07 实战中总结
+
+app: "微信"
+app_class: "WeChatMainWndForPC"
+action: "send_message"
+version: 1
+created: "2026-05-07"
+updated: "2026-05-07"
+status: "verified"
+
+prerequisites:
+  - "微信已登录并在前台"
+  - "目标聊天窗口已打开（可先用 search_contact Recipe）"
+  - "输入框已获得焦点"
+
+steps:
+  - name: "聚焦微信窗口"
+    api: "window.focus_window('微信')"
+    cli: "python -m gui_monitor focus 微信"
+    wait_after: 0.5
+
+  - name: "输入消息文本"
+    api: "input.type_text('你好', use_clipboard=True)"
+    cli: "python -m gui_monitor type 你好"
+    wait_after: 0.3
+    notes: |
+      消息输入框（不是搜索框）支持 Ctrl+V 剪贴板粘贴。
+      ⚠️ 仅搜索框不接受 Ctrl+V，聊天输入框可以正常使用。
+      type_text 默认使用 clipboard 模式。
+
+  - name: "发送消息"
+    api: "input.hotkey('alt', 's')"
+    cli: "python -m gui_monitor hotkey alt s"
+    wait_after: 0.3
+    notes: |
+      微信默认发送快捷键是 Alt+S。
+      部分用户可能设置为 Ctrl+Enter，需确认。
+      也可以直接点击发送按钮（但坐标不稳定，不推荐）。
+
+gotchas:
+  - issue: "输入框和搜索框的行为不同"
+    root_cause: "搜索框是 Qt 自定义控件，拦截 WM_PASTE；输入框是标准富文本框"
+    solution: "聊天输入框直接用 type_text (clipboard 模式) 即可"
+
+  - issue: "Alt+S 发送后消息实际未送出"
+    root_cause: "微信输入框未获得焦点，Alt+S 被其他元素捕获"
+    solution: "发送前先点击输入框区域确保焦点"
+    recovery: "click 输入框坐标 → 重新 type → 重新 hotkey alt s"
+
+  - issue: "中文输入法残留拼音干扰消息"
+    root_cause: "如果刚用过 type_pinyin 搜索联系人，IME 可能仍处于中文模式"
+    solution: "切换 IME 到英文后再 type_text，或直接用 clipboard 粘贴（绕过 IME）"
+
+timing:
+  focus_delay: 0.5
+  type_delay: 0.3
+  send_delay: 0.3
+  post_send_verify: 1.0
+
+reliability:
+  success_rate: "95%"
+  failure_modes:
+    - "输入框未获得焦点"
+    - "Alt+S 快捷键配置不同"
+  recovery: "点击输入框 → 重新输入 → 重新发送"

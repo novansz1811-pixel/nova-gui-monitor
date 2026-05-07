@@ -1,0 +1,28 @@
+# 调试截图（自动清理）
+screenshots_debug/
+chat_agent_data/screenshots/
+chat_agent_data/logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 环境变量
+.env

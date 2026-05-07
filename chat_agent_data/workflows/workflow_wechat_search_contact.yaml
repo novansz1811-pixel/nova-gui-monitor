@@ -1,0 +1,110 @@
+# Workflow Recipe: 微信搜索联系人/群聊
+# 从 2026-05-07 实战中总结
+
+app: "微信"
+app_class: "WeChatMainWndForPC"
+action: "search_contact"
+version: 1
+created: "2026-05-07"
+updated: "2026-05-07"
+status: "verified"
+
+prerequisites:
+  - "微信已登录并在前台"
+  - "系统输入法已安装中文拼音 (搜索中文联系人时)"
+  - "pypinyin 库已安装 (pip install pypinyin)"
+
+steps:
+  - name: "聚焦微信窗口"
+    api: "window.focus_window('微信')"
+    cli: "python -m gui_monitor focus 微信"
+    wait_after: 1.0
+    notes: "使用模糊匹配标题，会匹配第一个包含'微信'的窗口"
+
+  - name: "打开搜索框"
+    api: "input.hotkey('ctrl', 'f')"
+    cli: "python -m gui_monitor hotkey ctrl f"
+    wait_after: 2.0
+    notes: |
+      Ctrl+F 触发微信内置搜索面板。
+      必须等待至少 2 秒让搜索面板完全展开并获得焦点。
+      ⚠️ 不要点击搜索框！直接 Ctrl+F 更可靠。
+
+  - name: "输入联系人名称 (ASCII)"
+    condition: "联系人名全为英文/数字"
+    api: "input.type_text('linda', use_clipboard=False)"
+    cli: "python -m gui_monitor type linda --ascii"
+    wait_after: 2.0
+    notes: "逐字符 ASCII 键入，微信搜索框可正常接收"
+
+  - name: "输入联系人名称 (中文)"
+    condition: "联系人名包含中文字符"
+    api: "input.type_pinyin('四条龙')"
+    cli: "python -m gui_monitor type-pinyin 四条龙"
+    wait_after: 2.0
+    notes: |
+      通过系统拼音 IME 键入。过程:
+      1. pypinyin 将中文转拼音字母 (四条龙 → sitiaolong)
+      2. 逐字母 keybd_event 按键，触发系统 IME
+      3. IME 弹出候选面板
+      4. 按空格选择第一个候选项
+
+  - name: "选择搜索结果"
+    api: "input.key_press('enter')"
+    cli: "python -m gui_monitor key enter"
+    wait_after: 1.0
+    notes: "按 Enter 选择搜索结果列表中的第一项，打开对应聊天窗口"
+
+  - name: "关闭搜索面板 (可选)"
+    api: "input.key_press('escape')"
+    cli: "python -m gui_monitor key escape"
+    wait_after: 0.5
+    notes: "按 Escape 关闭搜索下拉面板，恢复正常聊天视图"
+
+gotchas:
+  - issue: "微信搜索框不接受 Ctrl+V 粘贴"
+    root_cause: "微信使用自定义 Qt 输入控件，拦截了标准 WM_PASTE 和键盘级的 Ctrl+V"
+    tried_and_failed:
+      - "set_clipboard_text + hotkey('ctrl', 'v')"
+      - "SendMessageW(hwnd, WM_PASTE, 0, 0)"
+      - "KEYEVENTF_UNICODE SendInput"
+    solution: "使用系统拼音输入法 (type_pinyin) 逐字母键入"
+    discovered: "2026-05-07"
+
+  - issue: "KEYEVENTF_UNICODE SendInput 无法在搜索框输入"
+    root_cause: "Qt 控件不处理 WM_UNICHAR 以外的 Unicode 注入方式"
+    solution: "改用 IME 拼音方案"
+    discovered: "2026-05-07"
+
+  - issue: "搜索面板展开后键入被忽略"
+    root_cause: "搜索框展开动画未完成时焦点不在输入区域"
+    solution: "Ctrl+F 后等待至少 2 秒"
+    discovered: "2026-05-07"
+
+  - issue: "直接点击搜索框位置反而打开了聊天列表项"
+    root_cause: "搜索框坐标和聊天列表项坐标重叠，点击偏移导致错误交互"
+    solution: "不要手动计算坐标点击搜索框，直接用 Ctrl+F 快捷键"
+    discovered: "2026-05-07"
+
+  - issue: "拼音候选可能不是目标汉字"
+    root_cause: "系统输入法的候选排序取决于用户历史使用频率"
+    solution: "默认按空格选第一个候选。如果不对，需人工确认或用数字键选择"
+    recovery: "Escape 清空后重试"
+
+timing:
+  focus_delay: 1.0
+  search_open_delay: 2.0
+  ascii_char_interval: 0.08
+  pinyin_char_interval: 0.08
+  ime_confirm_delay: 0.5
+  result_select_delay: 1.0
+  escape_delay: 0.5
+
+reliability:
+  ascii_success_rate: "95%"
+  pinyin_success_rate: "90%"
+  failure_modes:
+    - "IME 候选未命中目标汉字 (拼音输入法排序)"
+    - "微信未在前台或被其他窗口遮挡"
+    - "搜索面板动画未完成就开始键入"
+  recovery: "Escape 清空搜索框 → 等待 1 秒 → 重新 Ctrl+F → 重新键入"

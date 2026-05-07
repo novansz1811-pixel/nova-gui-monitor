@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nova-gui-monitor"
+version = "2.1.0"
+description = "Nova GUI Monitor — Windows 电脑 GUI 自动化 CLI 工具，纯 Win32 API，零 GUI 依赖"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Novansz"},
+]
+keywords = ["windows", "automation", "gui", "cli", "win32"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Desktop Environment",
+    "Topic :: Software Development :: Testing",
+]
+
+dependencies = [
+    "mss>=9.0.1",
+    "Pillow>=10.0.0",
+    "pypinyin>=0.55.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+chat = ["openai>=1.0.0"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+gui-monitor = "gui_monitor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/novansz1811-pixel/nova-gui-monitor"
+Issues = "https://github.com/novansz1811-pixel/nova-gui-monitor/issues"
+
+[tool.setuptools.packages.find]
+include = ["gui_monitor*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100

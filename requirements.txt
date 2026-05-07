@@ -1,0 +1,12 @@
+# 核心依赖
+mss>=9.0.1
+Pillow>=10.0.0
+
+# 中文输入支持
+pypinyin>=0.55.0
+
+# 配置文件
+pyyaml>=6.0
+
+# Chat Agent（可选）
+# openai>=1.0.0

@@ -302,6 +302,70 @@ def gui_screen_info() -> str:
     return json.dumps(info, ensure_ascii=False)
 
 
+# ═══════════════════════════════════════════════════════════════
+#  自动化工作流 (Recipe) 学习工具
+# ═══════════════════════════════════════════════════════════════
+
+@mcp.tool()
+def gui_list_workflows() -> str:
+    """列出当前所有学习过并保存的自动化工作流 (Recipes)。
+
+    Returns:
+        工作流列表 JSON
+    """
+    from .learning.recipe import RecipeManager
+    manager = RecipeManager()
+    recipes = manager.list_recipes()
+    return json.dumps(recipes, ensure_ascii=False)
+
+
+@mcp.tool()
+def gui_get_workflow(app_name: str, action: str) -> str:
+    """获取指定 App 和操作的具体工作流/最佳实践。
+
+    Args:
+        app_name: 应用名称 (如 "telegram", "wechat")
+        action: 操作名称 (如 "search_contact", "send_message")
+
+    Returns:
+        工作流详细信息的 JSON。如果不存在则返回失败信息。
+    """
+    from .learning.recipe import RecipeManager
+    manager = RecipeManager()
+    recipe = manager.load_recipe(app_name, action)
+    if recipe:
+        return json.dumps({"success": True, "recipe": recipe}, ensure_ascii=False)
+    else:
+        return json.dumps({"success": False, "error": f"未找到 {app_name} 的 {action} 工作流"})
+
+
+@mcp.tool()
+def gui_save_workflow(
+    app_name: str, 
+    action: str, 
+    steps: list, 
+    gotchas: list = None, 
+    params: dict = None
+) -> str:
+    """保存或更新一次成功的自动化操作流程 (Workflow Recipe)。
+    Agent 在完成复杂 GUI 探索后，应该调用此工具将步骤和最佳实践（坑/经验）记录下来。
+
+    Args:
+        app_name: 应用名称 (如 "telegram", "wechat")
+        action: 操作名称 (如 "search_contact", "send_message")
+        steps: 操作步骤列表 (包含指令, x, y, delay 等)
+        gotchas: (可选) 探索过程中踩过的坑和解决方案
+        params: (可选) 推荐的时序或坐标参数
+
+    Returns:
+        保存结果和文件路径 JSON
+    """
+    from .learning.recipe import RecipeManager
+    manager = RecipeManager()
+    path = manager.save_recipe(app_name, action, steps, gotchas=gotchas, params=params)
+    return json.dumps({"success": True, "path": path, "message": "工作流保存成功！"}, ensure_ascii=False)
+
+
 # ─── 入口 ─────────────────────────────────────────────────────
 
 def run_mcp(transport: str = "stdio"):

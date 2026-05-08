@@ -1,3 +1,6 @@
+# GitNexus 索引数据
+.gitnexus/
+
 # 调试截图（自动清理）
 screenshots_debug/
 chat_agent_data/screenshots/

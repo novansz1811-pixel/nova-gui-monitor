@@ -1,0 +1,769 @@
+from,to,type,confidence,reason,step
+"Folder:docs","File:docs/USAGE.md","CONTAINS",1,"",0
+"Folder:docs","File:docs/PRD.md","CONTAINS",1,"",0
+"Folder:gui_monitor","File:gui_monitor/__main__.py","CONTAINS",1,"",0
+"Folder:gui_monitor","File:gui_monitor/__init__.py","CONTAINS",1,"",0
+"Folder:gui_monitor","File:gui_monitor/server.py","CONTAINS",1,"",0
+"Folder:gui_monitor","File:gui_monitor/cli.py","CONTAINS",1,"",0
+"Folder:gui_monitor","File:gui_monitor/chat_agent.py","CONTAINS",1,"",0
+"Folder:chat_agent_data","Folder:chat_agent_data/workflows","CONTAINS",1,"",0
+"Folder:chat_agent_data/workflows","File:chat_agent_data/workflows/workflow_wechat_send_message.yaml","CONTAINS",1,"",0
+"Folder:chat_agent_data/workflows","File:chat_agent_data/workflows/workflow_wechat_search_contact.yaml","CONTAINS",1,"",0
+"Folder:gui_monitor","Folder:gui_monitor/utils","CONTAINS",1,"",0
+"Folder:gui_monitor/utils","File:gui_monitor/utils/__init__.py","CONTAINS",1,"",0
+"Folder:gui_monitor/utils","File:gui_monitor/utils/dpi.py","CONTAINS",1,"",0
+"Folder:gui_monitor/utils","File:gui_monitor/utils/clipboard.py","CONTAINS",1,"",0
+"Folder:gui_monitor","Folder:gui_monitor/core","CONTAINS",1,"",0
+"Folder:gui_monitor/core","File:gui_monitor/core/__init__.py","CONTAINS",1,"",0
+"Folder:gui_monitor/core","File:gui_monitor/core/window.py","CONTAINS",1,"",0
+"Folder:gui_monitor/core","File:gui_monitor/core/screen.py","CONTAINS",1,"",0
+"Folder:gui_monitor/core","File:gui_monitor/core/input.py","CONTAINS",1,"",0
+"File:README.md","Section:README.md:L1:Nova GUI Monitor","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L1:Nova GUI Monitor","Section:README.md:L7:✨ 特性","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L1:Nova GUI Monitor","Section:README.md:L16: 安装","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L19:克隆仓库","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L23:安装（推荐虚拟环境）","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L26:带 Chat Agent 支持","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L26:带 Chat Agent 支持","Section:README.md:L30: 快速开始","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L33:查看帮助","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L36:屏幕信息","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L39:截图保存","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L42:点击坐标 (500, 300)","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L45:输入中文","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L48:聚焦窗口","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L48:聚焦窗口","Section:README.md:L52: 命令参考","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L52: 命令参考","Section:README.md:L76:截图示例","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L79:全屏截图","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L82:区域截图（物理坐标 x,y,width,height）","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L85:按窗口标题截图","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L88:输出 Base64（适合 API 调用）","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L88:输出 Base64（适合 API 调用）","Section:README.md:L92:鼠标操作","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L95:右键点击","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L98:双击","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L101:平滑移动（0.5 秒缓动）","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L104:拖拽","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L107:滚动（正=上，负=下）","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L107:滚动（正=上，负=下）","Section:README.md:L111:键盘操作","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L114:按 Enter","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L117:组合键 Ctrl+C","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L120:输入中文（通过剪贴板粘贴）","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L123:通过拼音输入法","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L126:通过 Unicode SendInput","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L126:通过 Unicode SendInput","Section:README.md:L130:窗口管理","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L133:列出所有窗口","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L136:JSON 格式输出","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L139:聚焦窗口（模糊匹配标题）","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L142:获取窗口信息","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L142:获取窗口信息","Section:README.md:L146: HTTP API","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L149:启动 API 服务","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L149:启动 API 服务","Section:README.md:L164: Chat Agent（实验性）","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L169:设置 API Key","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L172:审核模式（推荐）— 每条回复需确认","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L175:通知模式 — 仅提醒，不回复","CONTAINS",1,"markdown-heading",0
+"File:README.md","Section:README.md:L178:自动模式 — 完全自动回复（谨慎使用）","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L178:自动模式 — 完全自动回复（谨慎使用）","Section:README.md:L182:⚙️ 系统要求","CONTAINS",1,"markdown-heading",0
+"Section:README.md:L178:自动模式 — 完全自动回复（谨慎使用）","Section:README.md:L188: License","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L1:GUI Monitor v2 — Claude Code / AI Agent 使用说明","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L1:GUI Monitor v2 — Claude Code / AI Agent 使用说明","Section:docs/USAGE.md:L7:快速开始","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L12:查看帮助","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L15:查看屏幕信息","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L18:截图","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L18:截图","Section:docs/USAGE.md:L22:所有命令","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L22:所有命令","Section:docs/USAGE.md:L24:截图","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L27:全屏截图","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L30:区域截图（物理坐标 x,y,width,height）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L33:按窗口标题截图","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L36:输出 Base64（适合 API 调用）","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L36:输出 Base64（适合 API 调用）","Section:docs/USAGE.md:L40:鼠标操作","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L43:左键单击","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L46:右键","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L49:双击","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L52:移动鼠标","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L55:平滑移动（0.5 秒）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L58:拖拽（从 100,100 到 300,200）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L61:滚轮（正=上, 负=下）","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L61:滚轮（正=上, 负=下）","Section:docs/USAGE.md:L66:键盘操作","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L69:按键","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L75:组合键","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L80:输入文本（支持中文！）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L84:ASCII 模式（逐字符按键，不走剪贴板）","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L84:ASCII 模式（逐字符按键，不走剪贴板）","Section:docs/USAGE.md:L88:窗口管理","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L91:列出所有窗口","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L94:JSON 格式输出","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L97:聚焦窗口（支持模糊匹配）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L101:获取窗口信息","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L104:获取当前前台窗口","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L104:获取当前前台窗口","Section:docs/USAGE.md:L108:屏幕信息","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L111:屏幕尺寸、DPI、显示器列表","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L114:当前鼠标位置","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L114:当前鼠标位置","Section:docs/USAGE.md:L118:HTTP API 服务（可选，兼容 v1）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L121:启动 HTTP API 服务","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L121:启动 HTTP API 服务","Section:docs/USAGE.md:L125:聊天代理（Chat Agent）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L128:监控微信联系人（审核模式 — 默认）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L131:自动回复群聊","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L134:仅通知模式（不回复，只报告新消息）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L137:使用自定义风格配置","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L140:指定发送快捷键","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L140:指定发送快捷键","Section:docs/USAGE.md:L144:风格学习","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L147:从聊天记录学习用户说话风格","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L150:指定聊天记录目录和输出路径","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L150:指定聊天记录目录和输出路径","Section:docs/USAGE.md:L154:拼音输入（中文搜索框）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L157:通过拼音输入法输入中文（适合微信搜索框等 Qt 控件）","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L160:通过 Unicode SendInput 输入（适合标准控件）","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L160:通过 Unicode SendInput 输入（适合标准控件）","Section:docs/USAGE.md:L164:常用操作示例","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L164:常用操作示例","Section:docs/USAGE.md:L166:打开程序并输入","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L169:1. 聚焦窗口","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L172:2. 输入文本","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L175:3. 保存（Ctrl+S）","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L175:3. 保存（Ctrl+S）","Section:docs/USAGE.md:L179:截图 → 分析 → 点击","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L182:1. 截图","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L185:2. AI 分析截图，确定目标坐标...","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L187:3. 点击目标","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L187:3. 点击目标","Section:docs/USAGE.md:L191:窗口操作","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L194:1. 列出窗口找目标","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L197:2. 聚焦目标窗口","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L200:3. 获取窗口位置进行区域截图","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L200:3. 获取窗口位置进行区域截图","Section:docs/USAGE.md:L205:微信群聊自动化","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L208:1. 搜索并打开群聊","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L216:2. 发送消息","CONTAINS",1,"markdown-heading",0
+"File:docs/USAGE.md","Section:docs/USAGE.md:L220:3. 或使用集成代理自动监控","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L220:3. 或使用集成代理自动监控","Section:docs/USAGE.md:L224:输出格式","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L220:3. 或使用集成代理自动监控","Section:docs/USAGE.md:L237:坐标系","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L220:3. 或使用集成代理自动监控","Section:docs/USAGE.md:L245:项目结构 (v2)","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L220:3. 或使用集成代理自动监控","Section:docs/USAGE.md:L274:依赖","CONTAINS",1,"markdown-heading",0
+"Section:docs/USAGE.md:L220:3. 或使用集成代理自动监控","Section:docs/USAGE.md:L288:输入法策略","CONTAINS",1,"markdown-heading",0
+"File:docs/PRD.md","Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","Section:docs/PRD.md:L3:1. 产品概述","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L3:1. 产品概述","Section:docs/PRD.md:L5:1.1 产品名称","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L3:1. 产品概述","Section:docs/PRD.md:L8:1.2 产品定位","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L3:1. 产品概述","Section:docs/PRD.md:L11:1.3 目标用户","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L3:1. 产品概述","Section:docs/PRD.md:L16:1.4 核心价值","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","Section:docs/PRD.md:L23:2. 功能需求","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L23:2. 功能需求","Section:docs/PRD.md:L25:2.1 区域选择窗口","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L23:2. 功能需求","Section:docs/PRD.md:L35:2.2 悬浮工具栏","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L23:2. 功能需求","Section:docs/PRD.md:L45:2.3 HTTP API","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L23:2. 功能需求","Section:docs/PRD.md:L61:2.4 IPC 文件","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","Section:docs/PRD.md:L71:3. 技术架构","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L71:3. 技术架构","Section:docs/PRD.md:L73:3.1 技术栈","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L71:3. 技术架构","Section:docs/PRD.md:L80:3.2 项目结构","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L71:3. 技术架构","Section:docs/PRD.md:L101:3.3 关键技术点","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L101:3.3 关键技术点","Section:docs/PRD.md:L103:3.3.1 DPI 感知","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L101:3.3 关键技术点","Section:docs/PRD.md:L109:3.3.2 透明窗口","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","Section:docs/PRD.md:L116:4. 接口规范","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L116:4. 接口规范","Section:docs/PRD.md:L118:4.1 HTTP API 详细说明","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L118:4.1 HTTP API 详细说明","Section:docs/PRD.md:L120:GET /region","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L118:4.1 HTTP API 详细说明","Section:docs/PRD.md:L133:POST /click","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L118:4.1 HTTP API 详细说明","Section:docs/PRD.md:L151:POST /drag","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L118:4.1 HTTP API 详细说明","Section:docs/PRD.md:L164:POST /hotkey","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L118:4.1 HTTP API 详细说明","Section:docs/PRD.md:L173:POST /typewrite","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","Section:docs/PRD.md:L185:5. 使用场景","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L185:5. 使用场景","Section:docs/PRD.md:L187:5.1 场景一：自动化测试","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L185:5. 使用场景","Section:docs/PRD.md:L193:5.2 场景二：Claude Code 操作","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L185:5. 使用场景","Section:docs/PRD.md:L199:5.3 场景三：RPA 脚本","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","Section:docs/PRD.md:L206:6. 后续规划","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L206:6. 后续规划","Section:docs/PRD.md:L208:6.1 短期优化","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L206:6. 后续规划","Section:docs/PRD.md:L213:6.2 中期功能","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L206:6. 后续规划","Section:docs/PRD.md:L218:6.3 长期规划","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L1:GUI Monitor - 产品需求文档 (PRD)","Section:docs/PRD.md:L225:7. 更新日志","CONTAINS",1,"markdown-heading",0
+"Section:docs/PRD.md:L225:7. 更新日志","Section:docs/PRD.md:L227:v0.1.0 (2025-03-25)","CONTAINS",1,"markdown-heading",0
+"File:gui_monitor/__main__.py","Function:gui_monitor/__main__.py:_cleanup_old_screenshots","DEFINES",1,"",0
+"File:gui_monitor/__main__.py","Variable:gui_monitor/__main__.py:project_root","DEFINES",1,"",0
+"File:gui_monitor/__main__.py","Variable:gui_monitor/__main__.py:dirs","DEFINES",1,"",0
+"File:gui_monitor/__main__.py","Variable:gui_monitor/__main__.py:now","DEFINES",1,"",0
+"File:gui_monitor/__init__.py","Variable:gui_monitor/__init__.py:__version__","DEFINES",1,"",0
+"File:gui_monitor/server.py","Class:gui_monitor/server.py:APIHandler","DEFINES",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler.log_message","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler.log_message","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler._send_json#2","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler._send_json#2","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler._read_body#0","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler._read_body#0","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:content_len","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:body","DEFINES",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler.do_OPTIONS#0","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler.do_OPTIONS#0","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler.do_GET#0","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler.do_GET#0","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler.do_POST#0","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler.do_POST#0","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler._handle_get#0","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler._handle_get#0","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:path","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:img_bytes","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:windows","DEFINES",1,"",0
+"File:gui_monitor/server.py","Method:gui_monitor/server.py:APIHandler._handle_post#0","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Method:gui_monitor/server.py:APIHandler._handle_post#0","HAS_METHOD",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:data","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:x","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:y","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:button","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:clicks","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:delay","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:duration","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:amount","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:key","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:presses","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:text","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:use_clipboard","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:keys","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:title","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:result","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:region","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:fmt","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:quality","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:save_path","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:r","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:content_type","DEFINES",1,"",0
+"File:gui_monitor/server.py","Function:gui_monitor/server.py:start_server","DEFINES",1,"",0
+"File:gui_monitor/server.py","Variable:gui_monitor/server.py:server","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:_parse_region","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:parts","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_screenshot","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:debug_dir","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:region","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:hwnd","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:data","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:result","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_click","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:button","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:clicks","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_move","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_drag","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_scroll","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:x","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:y","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_type","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:text","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_key","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_hotkey","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_windows","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:windows","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:pos","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_focus","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_window_info","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_foreground","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_info","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:screen","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_cursor","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_serve","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_chat_agent","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:api_key","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_chat_learn","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_type_pinyin","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:cmd_type_unicode","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:build_parser","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:parser","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:subparsers","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:p","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Function:gui_monitor/cli.py:main","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:args","DEFINES",1,"",0
+"File:gui_monitor/cli.py","Variable:gui_monitor/cli.py:error","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:_MODULE_DIR","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:_PROJECT_ROOT","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:DATA_DIR","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:LOG_DIR","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:SCREENSHOT_DIR","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:HISTORY_DIR","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:STYLE_FILE","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:WECHAT_SEND_KEYS","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:_ensure_dirs","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:_is_ascii","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:image_to_base64","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:image_hash","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:log_message","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:log_file","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:timestamp","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:line","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:load_style_profile","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:path","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:data","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:navigate_to_contact","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:result","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:screenshot_chat","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:region","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:analyze_screenshot","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:client","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:b64_image","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:style_prompt","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:messages","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:response","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:reply_text","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:send_reply","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:monitor_loop","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:sp","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:style_profile","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:last_hash","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:reply_count","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:minute_start","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:ss_path","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:current_hash","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:analysis","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:has_new","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:from_who","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:last_msg","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:reply","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:confidence","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:confirm","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Function:gui_monitor/chat_agent.py:learn_style","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:hdir","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:outpath","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:texts","DEFINES",1,"",0
+"File:gui_monitor/chat_agent.py","Variable:gui_monitor/chat_agent.py:combined","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:_initialized","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:_dpi_scale","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Function:gui_monitor/utils/dpi.py:init_dpi","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Function:gui_monitor/utils/dpi.py:get_dpi_scale","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:hdc","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:dpi","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Function:gui_monitor/utils/dpi.py:get_screen_size","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:w","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:h","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Function:gui_monitor/utils/dpi.py:get_virtual_screen_size","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:x","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:y","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Function:gui_monitor/utils/dpi.py:get_cursor_pos","DEFINES",1,"",0
+"File:gui_monitor/utils/dpi.py","Variable:gui_monitor/utils/dpi.py:point","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:CF_UNICODETEXT","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:GMEM_MOVEABLE","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Function:gui_monitor/utils/clipboard.py:set_clipboard_text","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:data","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:h_mem","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:p_mem","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Function:gui_monitor/utils/clipboard.py:get_clipboard_text","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:h_data","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:p_data","DEFINES",1,"",0
+"File:gui_monitor/utils/clipboard.py","Variable:gui_monitor/utils/clipboard.py:text","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:WNDENUMPROC","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:SW_RESTORE","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:SW_SHOW","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:SW_MINIMIZE","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:SW_MAXIMIZE","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:GWL_STYLE","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:GWL_EXSTYLE","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:WS_VISIBLE","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:WS_EX_TOOLWINDOW","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:WS_EX_APPWINDOW","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:_get_window_title","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:length","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:buf","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:_get_window_rect","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:rect","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:_get_class_name","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:_get_process_id","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:pid","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:_is_real_window","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:title","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:style","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:ex_style","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:list_windows","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:windows","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:callback","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:find_window","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:hwnd","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:title_lower","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:all_windows","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:pattern","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:focus_window","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:actual_title","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:get_window_info","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:move_window","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:width","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Variable:gui_monitor/core/window.py:height","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:minimize_window","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:maximize_window","DEFINES",1,"",0
+"File:gui_monitor/core/window.py","Function:gui_monitor/core/window.py:get_foreground_window","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Function:gui_monitor/core/screen.py:screenshot","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:monitor","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:raw","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:pil_img","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:fmt_upper","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:save_kwargs","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:buf","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Function:gui_monitor/core/screen.py:screenshot_window","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:rect","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:region","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Function:gui_monitor/core/screen.py:get_screen_info","DEFINES",1,"",0
+"File:gui_monitor/core/screen.py","Variable:gui_monitor/core/screen.py:monitors","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:INPUT_MOUSE","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:INPUT_KEYBOARD","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_MOVE","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_LEFTDOWN","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_LEFTUP","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_RIGHTDOWN","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_RIGHTUP","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_MIDDLEDOWN","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_MIDDLEUP","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_WHEEL","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:MOUSEEVENTF_ABSOLUTE","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:KEYEVENTF_KEYUP","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:KEYEVENTF_UNICODE","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:VK_MAP","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Class:gui_monitor/core/input.py:_KEYBDINPUT","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:_fields_","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Class:gui_monitor/core/input.py:_INPUT_UNION","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Class:gui_monitor/core/input.py:_INPUT","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:_get_vk","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:key_lower","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:vk","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:click","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:move","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:steps","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:t","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:cur_x","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:cur_y","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:drag","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:scroll","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:key_press","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:hotkey","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:vks","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:type_text","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:vk_result","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:shift","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:type_unicode","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:inputs","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Function:gui_monitor/core/input.py:type_pinyin","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:py_list","DEFINES",1,"",0
+"File:gui_monitor/core/input.py","Variable:gui_monitor/core/input.py:full_pinyin","DEFINES",1,"",0
+"Class:gui_monitor/server.py:APIHandler","Class:BaseHTTPRequestHandler","EXTENDS",0.689202437604511,"",0
+"Method:gui_monitor/server.py:APIHandler.do_GET#0","Method:gui_monitor/server.py:APIHandler._handle_get#0","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler.do_GET#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler.do_POST#0","Method:gui_monitor/server.py:APIHandler._handle_post#0","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler.do_POST#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._read_body#0","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","Method:gui_monitor/server.py:APIHandler._send_json#2","CALLS",0.85,"global",0
+"File:gui_monitor/__main__.py","Function:gui_monitor/utils/dpi.py:init_dpi","CALLS",0.85,"import-resolved",0
+"File:gui_monitor/__main__.py","Function:gui_monitor/__main__.py:_cleanup_old_screenshots","CALLS",0.85,"local-call",0
+"File:gui_monitor/__main__.py","Function:gui_monitor/cli.py:main","CALLS",0.85,"import-resolved",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Function:gui_monitor/utils/dpi.py:get_screen_size","CALLS",0.85,"import-resolved",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Function:gui_monitor/utils/dpi.py:get_dpi_scale","CALLS",0.85,"import-resolved",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","Function:gui_monitor/utils/dpi.py:get_cursor_pos","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/server.py:start_server","Function:gui_monitor/utils/dpi.py:get_screen_size","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/server.py:start_server","Function:gui_monitor/utils/dpi.py:get_dpi_scale","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_screenshot","Function:gui_monitor/cli.py:_parse_region","CALLS",0.85,"local-call",0
+"Function:gui_monitor/cli.py:cmd_screenshot","Function:gui_monitor/core/window.py:find_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_screenshot","Function:gui_monitor/core/screen.py:screenshot_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_screenshot","Function:gui_monitor/core/screen.py:screenshot","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_click","Function:gui_monitor/core/input.py:click","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_move","Function:gui_monitor/core/input.py:move","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_drag","Function:gui_monitor/core/input.py:drag","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_scroll","Function:gui_monitor/core/input.py:scroll","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_type","Function:gui_monitor/core/input.py:type_text","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_key","Function:gui_monitor/core/input.py:key_press","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_hotkey","Function:gui_monitor/core/input.py:hotkey","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_windows","Function:gui_monitor/core/window.py:list_windows","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_focus","Function:gui_monitor/core/window.py:focus_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_window_info","Function:gui_monitor/core/window.py:get_window_info","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_foreground","Function:gui_monitor/core/window.py:get_foreground_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_info","Function:gui_monitor/core/screen.py:get_screen_info","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_info","Function:gui_monitor/utils/dpi.py:get_dpi_scale","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_cursor","Function:gui_monitor/utils/dpi.py:get_cursor_pos","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_serve","Function:gui_monitor/server.py:start_server","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_chat_agent","Function:gui_monitor/chat_agent.py:monitor_loop","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_chat_learn","Function:gui_monitor/chat_agent.py:learn_style","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_type_pinyin","Function:gui_monitor/core/input.py:type_pinyin","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:cmd_type_unicode","Function:gui_monitor/core/input.py:type_unicode","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/cli.py:main","Function:gui_monitor/cli.py:build_parser","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","Function:gui_monitor/core/window.py:focus_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","Function:gui_monitor/core/input.py:hotkey","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","Function:gui_monitor/chat_agent.py:_is_ascii","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","Function:gui_monitor/core/input.py:type_text","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","Function:gui_monitor/core/input.py:type_pinyin","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","Function:gui_monitor/core/input.py:key_press","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:screenshot_chat","Function:gui_monitor/core/window.py:focus_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:screenshot_chat","Function:gui_monitor/core/screen.py:screenshot","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:analyze_screenshot","Function:gui_monitor/chat_agent.py:image_to_base64","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:send_reply","Function:gui_monitor/core/window.py:focus_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:send_reply","Function:gui_monitor/core/input.py:type_text","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:send_reply","Function:gui_monitor/core/input.py:hotkey","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:_ensure_dirs","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:load_style_profile","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:navigate_to_contact","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/core/window.py:focus_window","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:screenshot_chat","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:image_hash","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:analyze_screenshot","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:log_message","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","Function:gui_monitor/chat_agent.py:send_reply","CALLS",0.85,"local-call",0
+"Function:gui_monitor/chat_agent.py:learn_style","Function:gui_monitor/chat_agent.py:_ensure_dirs","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:_is_real_window","Function:gui_monitor/core/window.py:_get_window_title","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:callback","Function:gui_monitor/core/window.py:_get_window_title","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:callback","Function:gui_monitor/core/window.py:_is_real_window","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:callback","Function:gui_monitor/core/window.py:_get_window_rect","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:callback","Function:gui_monitor/core/window.py:_get_class_name","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:callback","Function:gui_monitor/core/window.py:_get_process_id","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:find_window","Function:gui_monitor/core/window.py:list_windows","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:focus_window","Function:gui_monitor/core/window.py:find_window","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:focus_window","Function:gui_monitor/core/window.py:_get_window_title","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:focus_window","Function:gui_monitor/core/window.py:_get_window_rect","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_window_info","Function:gui_monitor/core/window.py:find_window","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_window_info","Function:gui_monitor/core/window.py:_get_window_title","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_window_info","Function:gui_monitor/core/window.py:_get_window_rect","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_window_info","Function:gui_monitor/core/window.py:_get_class_name","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_window_info","Function:gui_monitor/core/window.py:_get_process_id","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:move_window","Function:gui_monitor/core/window.py:find_window","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:move_window","Function:gui_monitor/core/window.py:_get_window_rect","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:minimize_window","Function:gui_monitor/core/window.py:find_window","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:maximize_window","Function:gui_monitor/core/window.py:find_window","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_foreground_window","Function:gui_monitor/core/window.py:_get_window_title","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_foreground_window","Function:gui_monitor/core/window.py:_get_window_rect","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/window.py:get_foreground_window","Function:gui_monitor/core/window.py:_get_class_name","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/screen.py:screenshot_window","Function:gui_monitor/core/screen.py:screenshot","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/screen.py:get_screen_info","Function:gui_monitor/utils/dpi.py:get_screen_size","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/core/input.py:move","Function:gui_monitor/utils/dpi.py:get_cursor_pos","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/core/input.py:key_press","Function:gui_monitor/core/input.py:_get_vk","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/input.py:hotkey","Function:gui_monitor/core/input.py:_get_vk","CALLS",0.85,"local-call",0
+"Function:gui_monitor/core/input.py:type_text","Function:gui_monitor/utils/clipboard.py:set_clipboard_text","CALLS",0.85,"import-resolved",0
+"Function:gui_monitor/core/input.py:type_text","Function:gui_monitor/core/input.py:hotkey","CALLS",0.85,"local-call",0
+"File:gui_monitor/__main__.py","File:gui_monitor/utils/dpi.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/__main__.py","File:gui_monitor/cli.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/server.py","File:gui_monitor/core/__init__.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/server.py","File:gui_monitor/utils/dpi.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/cli.py","File:gui_monitor/core/screen.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/cli.py","File:gui_monitor/core/window.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/cli.py","File:gui_monitor/core/input.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/cli.py","File:gui_monitor/utils/dpi.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/cli.py","File:gui_monitor/server.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/cli.py","File:gui_monitor/chat_agent.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/chat_agent.py","File:gui_monitor/core/window.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/chat_agent.py","File:gui_monitor/core/input.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/chat_agent.py","File:gui_monitor/core/screen.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/core/screen.py","File:gui_monitor/utils/dpi.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/core/input.py","File:gui_monitor/utils/clipboard.py","IMPORTS",1,"python-scope: import",0
+"File:gui_monitor/core/input.py","File:gui_monitor/utils/dpi.py","IMPORTS",1,"python-scope: import",0
+"Function:gui_monitor/__main__.py:_cleanup_old_screenshots","comm_0","MEMBER_OF",1,"leiden-algorithm",0
+"Class:gui_monitor/server.py:APIHandler","comm_1","MEMBER_OF",1,"leiden-algorithm",0
+"Method:gui_monitor/server.py:APIHandler._send_json#2","comm_2","MEMBER_OF",1,"leiden-algorithm",0
+"Method:gui_monitor/server.py:APIHandler._read_body#0","comm_2","MEMBER_OF",1,"leiden-algorithm",0
+"Method:gui_monitor/server.py:APIHandler.do_GET#0","comm_2","MEMBER_OF",1,"leiden-algorithm",0
+"Method:gui_monitor/server.py:APIHandler.do_POST#0","comm_2","MEMBER_OF",1,"leiden-algorithm",0
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","comm_2","MEMBER_OF",1,"leiden-algorithm",0
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","comm_2","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/server.py:start_server","comm_3","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:_parse_region","comm_4","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_screenshot","comm_4","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_click","comm_5","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_move","comm_6","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_drag","comm_7","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_scroll","comm_8","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_type","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_key","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_hotkey","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_windows","comm_10","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_focus","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_window_info","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_foreground","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_info","comm_3","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_cursor","comm_6","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_serve","comm_3","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_chat_agent","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_chat_learn","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_type_pinyin","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_type_unicode","comm_13","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:build_parser","comm_14","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:main","comm_14","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:_ensure_dirs","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:_is_ascii","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:image_to_base64","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:image_hash","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:log_message","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:load_style_profile","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:screenshot_chat","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:analyze_screenshot","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:send_reply","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:monitor_loop","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/chat_agent.py:learn_style","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/utils/dpi.py:init_dpi","comm_15","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/utils/dpi.py:get_dpi_scale","comm_3","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/utils/dpi.py:get_screen_size","comm_3","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/utils/dpi.py:get_cursor_pos","comm_6","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/utils/clipboard.py:set_clipboard_text","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:_get_window_title","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:_get_window_rect","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:_get_class_name","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:_get_process_id","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:_is_real_window","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:list_windows","comm_10","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:callback","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:find_window","comm_10","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:focus_window","comm_11","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:get_window_info","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:move_window","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:minimize_window","comm_10","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:maximize_window","comm_10","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/window.py:get_foreground_window","comm_12","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/screen.py:screenshot","comm_4","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/screen.py:screenshot_window","comm_4","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/screen.py:get_screen_info","comm_3","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:_get_vk","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:click","comm_5","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:move","comm_6","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:drag","comm_7","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:scroll","comm_8","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:key_press","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:hotkey","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:type_text","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:type_unicode","comm_13","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/core/input.py:type_pinyin","comm_9","MEMBER_OF",1,"leiden-algorithm",0
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_0_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_0_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","proc_0_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:focus_window","proc_0_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/core/window.py:find_window","proc_0_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",5
+"Function:gui_monitor/core/window.py:list_windows","proc_0_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",6
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_1_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_1_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","proc_1_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/input.py:type_text","proc_1_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/core/input.py:hotkey","proc_1_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",5
+"Function:gui_monitor/core/input.py:_get_vk","proc_1_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",6
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_2_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_2_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","proc_2_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:focus_window","proc_2_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/core/window.py:_get_window_title","proc_2_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",5
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_3_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_3_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","proc_3_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:focus_window","proc_3_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/core/window.py:_get_window_rect","proc_3_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",5
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_4_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_4_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","proc_4_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/input.py:type_text","proc_4_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/utils/clipboard.py:set_clipboard_text","proc_4_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",5
+"Function:gui_monitor/chat_agent.py:send_reply","proc_5_send_reply","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_5_send_reply","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:find_window","proc_5_send_reply","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:list_windows","proc_5_send_reply","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/chat_agent.py:send_reply","proc_6_send_reply","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/input.py:type_text","proc_6_send_reply","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/input.py:hotkey","proc_6_send_reply","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/input.py:_get_vk","proc_6_send_reply","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/cli.py:cmd_type","proc_7_cmd_type","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/input.py:type_text","proc_7_cmd_type","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/input.py:hotkey","proc_7_cmd_type","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/input.py:_get_vk","proc_7_cmd_type","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/cli.py:cmd_focus","proc_8_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_8_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:find_window","proc_8_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:list_windows","proc_8_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/cli.py:cmd_window_info","proc_9_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:get_window_info","proc_9_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:find_window","proc_9_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:list_windows","proc_9_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_10_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_10_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:navigate_to_contact","proc_10_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/chat_agent.py:_is_ascii","proc_10_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/chat_agent.py:screenshot_chat","proc_11_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_11_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:find_window","proc_11_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:list_windows","proc_11_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",4
+"Function:gui_monitor/core/window.py:callback","proc_12_callback","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:_is_real_window","proc_12_callback","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_title","proc_12_callback","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_screenshot","proc_13_cmd_screenshot","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:find_window","proc_13_cmd_screenshot","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:list_windows","proc_13_cmd_screenshot","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_screenshot","proc_14_cmd_screenshot","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/screen.py:screenshot_window","proc_14_cmd_screenshot","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/screen.py:screenshot","proc_14_cmd_screenshot","STEP_IN_PROCESS",1,"trace-detection",3
+"Method:gui_monitor/server.py:APIHandler.do_GET#0","proc_15_do_get","STEP_IN_PROCESS",1,"trace-detection",1
+"Method:gui_monitor/server.py:APIHandler._handle_get#0","proc_15_do_get","STEP_IN_PROCESS",1,"trace-detection",2
+"Method:gui_monitor/server.py:APIHandler._send_json#2","proc_15_do_get","STEP_IN_PROCESS",1,"trace-detection",3
+"Method:gui_monitor/server.py:APIHandler.do_POST#0","proc_16_do_post","STEP_IN_PROCESS",1,"trace-detection",1
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","proc_16_do_post","STEP_IN_PROCESS",1,"trace-detection",2
+"Method:gui_monitor/server.py:APIHandler._read_body#0","proc_16_do_post","STEP_IN_PROCESS",1,"trace-detection",3
+"Method:gui_monitor/server.py:APIHandler.do_POST#0","proc_17_do_post","STEP_IN_PROCESS",1,"trace-detection",1
+"Method:gui_monitor/server.py:APIHandler._handle_post#0","proc_17_do_post","STEP_IN_PROCESS",1,"trace-detection",2
+"Method:gui_monitor/server.py:APIHandler._send_json#2","proc_17_do_post","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_info","proc_18_cmd_info","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/screen.py:get_screen_info","proc_18_cmd_info","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/utils/dpi.py:get_screen_size","proc_18_cmd_info","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/core/window.py:move_window","proc_19_move_window","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:find_window","proc_19_move_window","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:list_windows","proc_19_move_window","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/chat_agent.py:send_reply","proc_20_send_reply","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_20_send_reply","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_title","proc_20_send_reply","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/chat_agent.py:send_reply","proc_21_send_reply","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_21_send_reply","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_rect","proc_21_send_reply","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/chat_agent.py:send_reply","proc_22_send_reply","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/input.py:type_text","proc_22_send_reply","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/utils/clipboard.py:set_clipboard_text","proc_22_send_reply","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_move","proc_23_cmd_move","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/input.py:move","proc_23_cmd_move","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/utils/dpi.py:get_cursor_pos","proc_23_cmd_move","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_type","proc_24_cmd_type","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/input.py:type_text","proc_24_cmd_type","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/utils/clipboard.py:set_clipboard_text","proc_24_cmd_type","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_key","proc_25_cmd_key","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/input.py:key_press","proc_25_cmd_key","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/input.py:_get_vk","proc_25_cmd_key","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_hotkey","proc_26_cmd_hotkey","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/input.py:hotkey","proc_26_cmd_hotkey","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/input.py:_get_vk","proc_26_cmd_hotkey","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_focus","proc_27_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_27_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_title","proc_27_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_focus","proc_28_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_28_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_rect","proc_28_cmd_focus","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_window_info","proc_29_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:get_window_info","proc_29_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_title","proc_29_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_window_info","proc_30_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:get_window_info","proc_30_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_rect","proc_30_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_window_info","proc_31_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:get_window_info","proc_31_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_class_name","proc_31_cmd_window_info","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_foreground","proc_32_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:get_foreground_window","proc_32_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_title","proc_32_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_foreground","proc_33_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:get_foreground_window","proc_33_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_rect","proc_33_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_foreground","proc_34_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:get_foreground_window","proc_34_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_class_name","proc_34_cmd_foreground","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_serve","proc_35_cmd_serve","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/server.py:start_server","proc_35_cmd_serve","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/utils/dpi.py:get_screen_size","proc_35_cmd_serve","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_serve","proc_36_cmd_serve","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/server.py:start_server","proc_36_cmd_serve","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/utils/dpi.py:get_dpi_scale","proc_36_cmd_serve","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_37_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_37_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:_ensure_dirs","proc_37_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_chat_agent","proc_38_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:monitor_loop","proc_38_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:load_style_profile","proc_38_cmd_chat_agent","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/cli.py:cmd_chat_learn","proc_39_cmd_chat_learn","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/chat_agent.py:learn_style","proc_39_cmd_chat_learn","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/chat_agent.py:_ensure_dirs","proc_39_cmd_chat_learn","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/chat_agent.py:screenshot_chat","proc_40_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_40_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_title","proc_40_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",3
+"Function:gui_monitor/chat_agent.py:screenshot_chat","proc_41_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",1
+"Function:gui_monitor/core/window.py:focus_window","proc_41_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",2
+"Function:gui_monitor/core/window.py:_get_window_rect","proc_41_screenshot_chat","STEP_IN_PROCESS",1,"trace-detection",3

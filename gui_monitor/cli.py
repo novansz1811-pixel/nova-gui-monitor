@@ -317,11 +317,18 @@ def cmd_type_unicode(args):
     from .core.input import type_unicode
 
     text = " ".join(args.text)
-    type_unicode(text)
+    for ch in text:
+        type_unicode(ch)
 
     result = {"success": True, "text": text, "method": "unicode"}
     print(json.dumps(result, ensure_ascii=False))
     return 0
+
+
+def cmd_mcp(args):
+    """启动 MCP Server。"""
+    from .mcp_server import run_mcp
+    run_mcp(transport=args.transport)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -460,6 +467,13 @@ def build_parser() -> argparse.ArgumentParser:
     p = subparsers.add_parser("type-unicode", aliases=["tu"], help="通过 Unicode SendInput 输入")
     p.add_argument("text", nargs="+", help="要输入的文本")
     p.set_defaults(func=cmd_type_unicode)
+
+    # ─── mcp ────────────────────────────────────────
+    p = subparsers.add_parser("mcp", help="启动 MCP Server（供 AI Agent 调用）")
+    p.add_argument("--transport", "-t", default="stdio",
+                   choices=["stdio", "sse"],
+                   help="传输模式：stdio（标准）或 sse（HTTP）")
+    p.set_defaults(func=cmd_mcp)
 
     return parser
 

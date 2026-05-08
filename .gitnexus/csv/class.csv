@@ -1,0 +1,171 @@
+id,name,filePath,startLine,endLine,isExported,content,description
+"Class:gui_monitor/server.py:APIHandler","APIHandler","gui_monitor/server.py",17,203,true,"
+
+class APIHandler(BaseHTTPRequestHandler):
+    """"""HTTP API 请求处理器。""""""
+    
+    def log_message(self, format, *args):
+        """"""简化日志。""""""
+        print(f""[API] {self.command} {self.path}"", file=sys.stderr)
+    
+    def _send_json(self, data: dict, status: int = 200):
+        self.send_response(status)
+        self.send_header(""Content-Type"", ""application/json; charset=utf-8"")
+        self.send_header(""Access-Control-Allow-Origin"", ""*"")
+        self.send_header(""Access-Control-Allow-Methods"", ""GET, POST, OPTIONS"")
+        self.send_header(""Access-Control-Allow-Headers"", ""Content-Type"")
+        self.end_headers()
+        self.wfile.write(json.dumps(data, ensure_ascii=False).encode(""utf-8""))
+    
+    def _read_body(self) -> dict:
+        content_len = int(self.headers.get(""Content-Length"", 0))
+        if content_len == 0:
+            return {}
+        body = self.rfile.read(content_len)
+        return json.loads(body) if body else {}
+    
+    def do_OPTIONS(self):
+        """"""CORS 预检。""""""
+        self.send_response(204)
+        self.send_header(""Access-Control-Allow-Origin"", ""*"")
+        self.send_header(""Access-Control-Allow-Methods"", ""GET, POST, OPTIONS"")
+        self.send_header(""Access-Control-Allow-Headers"", ""Content-Type"")
+        self.end_headers()
+    
+    def do_GET(self):
+        try:
+            self._handle_get()
+        except Exception as e:
+            self._send_json({""error"": str(e), ""type"": type(e).__name__}, 500)
+    
+    def do_POST(self):
+        try:
+            self._handle_post()
+        except Exception as e:
+            self._send_json({""error"": str(e), ""type"": type(e).__name__}, 500)
+    
+    def _handle_get(self):
+        path = self.path.split(""?"")[0]  # 去掉查询参数
+        
+        if path == ""/info"":
+            w, h = get_screen_size()
+            self._send_json({
+                ""screen_width"": w,
+                ""screen_height"": h,
+                ""dpi_scale"": get_dpi_scale(),
+            })
+        
+        elif path == ""/screenshot"":
+            img_bytes = screen.screenshot(format=""jpeg"", quality=85)
+            self.send_response(200)
+            self.send_header(""Content-Type"", ""image/jpeg"")
+            self.send_header(""Content-Length"", str(len(img_bytes)))
+            self.send_header(""Access-Control-Allow-Origin"", ""*"")
+            self.end_headers()
+            self.wfile.write(img_bytes)
+        
+        elif path == ""/cursor"":
+            x, y = get_cursor_pos()
+            self._send_json({""x"": x, ""y"": y})
+        
+        elif path == ""/windows"":
+            windows = window.list_windows()
+            self._send_json({""windows"": windows, ""count"": len(windows)})
+        
+        elif path == ""/foreground"":
+            self._send_json(window.get_foreground_window())
+        
+        # v1 兼容
+        elif path == ""/region"":
+            w, h = get_screen_size()
+            self._send_json({
+                ""x"": 0, ""y"": 0, ""width"": w, ""height"": h,
+                ""mode"": ""fullscreen"", ""timestamp"": time.time()
+            })
+        
+        elif path == ""/state"":
+            x, y = get_cursor_pos()
+            self._send_json({
+                ""mouse_x"": x, ""mouse_y"": y,
+                ""is_clicking"": False, ""overlay_visible"": True,
+                ""timestamp"": time.time()
+            })
+        
+        else:
+            self._send_json({""error"": ""Not found"", ""path"": path}, 404)
+    
+    def _handle_post(self):
+        path = self.path.split(""?"")[0]
+        data = self._read_body()
+        
+        if path == ""/click"":
+            x = data.get(""x"", 0)
+            y = data.get(""y"", 0)
+            button = data.get(""button"", ""left"")
+            clicks = data.get(""clicks"", 1)
+            delay = data.get(""delay"", 0)
+            
+            if delay > 0:
+                time.sleep(delay)
+            
+            inp.click(x, y, button=button, clicks=clicks)
+            self._send_json({""success"": True, ""x"": x, ""y"": y, ""button"": button})
+        
+        elif path == ""/move"":
+            x = data.get(""x"", 0)
+            y = data.get(""y"", 0)
+            duration = data.get(""duration"", 0)
+            
+            inp.move(x, y, duration=duration)
+            self._send_json({""success"": True, ""x"": x, ""y"": y})
+        
+        elif path == ""/drag"":
+            inp.drag(
+                data.get(""start_x"", 0), data.get(""start_y"", 0),
+                data.get(""end_x"", 0), data.get(""end_y"", 0),
+                duration=data.get(""duration"", 0.5),
+            )
+            self._send_json({""success"": True})
+        
+        elif path == ""/scroll"":
+            amount = data.get(""amount"", -3)
+            x = data.get(""x"")
+            y = data.get(""y"")
+            inp.scroll(amount, x=x, y=y)
+            self._send_json({""success"": True, ""amount"": amount})
+        
+        elif path == ""/key"":
+            key = data.get(""key"", """")
+            presses = data.get(""presses"", 1)
+            inp.key_press(key, presses=presses)
+            self._send_json({""success"": True, ""key"": key})
+        
+   
+... [truncated]",""
+"Class:gui_monitor/core/input.py:_KEYBDINPUT","_KEYBDINPUT","gui_monitor/core/input.py",67,74,false,"# ─── SendInput 结构体（type_unicode 使用） ──────────────────
+
+class _KEYBDINPUT(ctypes.Structure):
+    _fields_ = [
+        (""wVk"", wintypes.WORD),
+        (""wScan"", wintypes.WORD),
+        (""dwFlags"", wintypes.DWORD),
+        (""time"", wintypes.DWORD),
+        (""dwExtraInfo"", ctypes.POINTER(ctypes.c_ulong)),
+    ]
+
+class _INPUT_UNION(ctypes.Union):",""
+"Class:gui_monitor/core/input.py:_INPUT_UNION","_INPUT_UNION","gui_monitor/core/input.py",76,77,false,"    ]
+
+class _INPUT_UNION(ctypes.Union):
+    _fields_ = [(""ki"", _KEYBDINPUT)]
+
+class _INPUT(ctypes.Structure):",""
+"Class:gui_monitor/core/input.py:_INPUT","_INPUT","gui_monitor/core/input.py",79,83,false,"    _fields_ = [(""ki"", _KEYBDINPUT)]
+
+class _INPUT(ctypes.Structure):
+    _fields_ = [
+        (""type"", wintypes.DWORD),
+        (""_input"", _INPUT_UNION),
+    ]
+
+def _get_vk(key: str) -> int:",""

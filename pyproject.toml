@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nova-gui-monitor"
-version = "2.1.0"
+version = "2.2.0"
 description = "Nova GUI Monitor — Windows 电脑 GUI 自动化 CLI 工具，纯 Win32 API，零 GUI 依赖"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -32,6 +32,7 @@ dependencies = [
     "Pillow>=10.0.0",
     "pypinyin>=0.55.0",
     "pyyaml>=6.0",
+    "mcp>=1.0.0",
 ]
 
 [project.optional-dependencies]

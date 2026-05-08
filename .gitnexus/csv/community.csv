@@ -1,0 +1,14 @@
+id,label,heuristicLabel,keywords,description,enrichedBy,cohesion,symbolCount
+"comm_9","Gui_monitor","Gui_monitor",[],"","heuristic",0.8823529411764706,13
+"comm_11","Gui_monitor","Gui_monitor",[],"","heuristic",0.7647058823529411,13
+"comm_12","Gui_monitor","Gui_monitor",[],"","heuristic",0.8888888888888888,11
+"comm_2","Gui_monitor","Gui_monitor",[],"","heuristic",0.8235294117647058,6
+"comm_3","Gui_monitor","Gui_monitor",[],"","heuristic",0.8571428571428571,6
+"comm_10","Gui_monitor","Gui_monitor",[],"","heuristic",0.6666666666666666,5
+"comm_4","Gui_monitor","Gui_monitor",[],"","heuristic",0.8,4
+"comm_6","Gui_monitor","Gui_monitor",[],"","heuristic",0.8571428571428571,4
+"comm_5","Gui_monitor","Gui_monitor",[],"","heuristic",1,2
+"comm_7","Gui_monitor","Gui_monitor",[],"","heuristic",1,2
+"comm_8","Gui_monitor","Gui_monitor",[],"","heuristic",1,2
+"comm_13","Gui_monitor","Gui_monitor",[],"","heuristic",1,2
+"comm_14","Gui_monitor","Gui_monitor",[],"","heuristic",1,2

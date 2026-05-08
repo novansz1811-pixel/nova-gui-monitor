@@ -187,6 +187,10 @@ python -m gui_monitor chat-agent --contact "Linda" --mode auto
 
 ## 📝 更新日志 (Changelog)
 
+### v2.4.1 (2026-05-08)
+- **优化**: 完善了微信联系人搜索和消息发送的 GUI 自动化流程，解决了中英文字符的输入法兼性问题。
+- **修复**: 修复了搜索微信联系人时，因为 `Down` 键误按导致非目标联系人被选中的问题，现在普通联系人直接按 `Enter` 即可准确发送。
+
 ### v2.4.0 (2026-05-08)
 - **新增**: 原生集成了 GUI 自动化工作流 (Workflow Recipe) 学习与记录功能 (`gui_monitor.learning`)。
 - **优化**: MCP Server 新增了 `gui_list_workflows`, `gui_get_workflow` 和 `gui_save_workflow` 工具。当 AI Agent 在试错后成功跑通了特定的流程（如微信/Telegram搜索发消息），可以直接调用 MCP 将最佳实践（步骤、等待时间、踩坑经验等）固化成 YAML 配置文件，供下次自动读取与升级。

@@ -63,7 +63,17 @@ VK_MAP = {
 }
 
 
-# ─── SendInput 结构体（type_unicode 使用） ──────────────────
+# ─── SendInput 结构体（鼠标 + 键盘通用） ─────────────────────
+
+class _MOUSEINPUT(ctypes.Structure):
+    _fields_ = [
+        ("dx", ctypes.c_long),
+        ("dy", ctypes.c_long),
+        ("mouseData", wintypes.DWORD),
+        ("dwFlags", wintypes.DWORD),
+        ("time", wintypes.DWORD),
+        ("dwExtraInfo", ctypes.POINTER(ctypes.c_ulong)),
+    ]
 
 class _KEYBDINPUT(ctypes.Structure):
     _fields_ = [
@@ -74,14 +84,49 @@ class _KEYBDINPUT(ctypes.Structure):
         ("dwExtraInfo", ctypes.POINTER(ctypes.c_ulong)),
     ]
 
+class _HARDWAREINPUT(ctypes.Structure):
+    _fields_ = [
+        ("uMsg", wintypes.DWORD),
+        ("wParamL", wintypes.WORD),
+        ("wParamH", wintypes.WORD),
+    ]
+
 class _INPUT_UNION(ctypes.Union):
-    _fields_ = [("ki", _KEYBDINPUT)]
+    _fields_ = [
+        ("mi", _MOUSEINPUT),
+        ("ki", _KEYBDINPUT),
+        ("hi", _HARDWAREINPUT),
+    ]
 
 class _INPUT(ctypes.Structure):
     _fields_ = [
         ("type", wintypes.DWORD),
         ("_input", _INPUT_UNION),
     ]
+
+
+def _to_absolute(x: int, y: int) -> tuple[int, int]:
+    """将物理屏幕坐标转换为 SendInput 所需的归一化绝对坐标 (0-65535)。
+    
+    SendInput + MOUSEEVENTF_ABSOLUTE 使用 0-65535 归一化坐标系。
+    """
+    screen_w = ctypes.windll.user32.GetSystemMetrics(0)  # SM_CXSCREEN
+    screen_h = ctypes.windll.user32.GetSystemMetrics(1)  # SM_CYSCREEN
+    abs_x = int(x * 65535 / (screen_w - 1) + 0.5)
+    abs_y = int(y * 65535 / (screen_h - 1) + 0.5)
+    return abs_x, abs_y
+
+
+def _send_mouse_input(flags: int, dx: int = 0, dy: int = 0, mouse_data: int = 0):
+    """发送单个鼠标 SendInput 事件。"""
+    inp = _INPUT()
+    inp.type = INPUT_MOUSE
+    inp._input.mi.dx = dx
+    inp._input.mi.dy = dy
+    inp._input.mi.mouseData = mouse_data
+    inp._input.mi.dwFlags = flags
+    ctypes.windll.user32.SendInput(1, ctypes.byref(inp), ctypes.sizeof(_INPUT))
+
 
 def _get_vk(key: str) -> int:
     """将按键名转换为 Virtual Key Code。"""
@@ -100,10 +145,14 @@ def _get_vk(key: str) -> int:
     raise ValueError(f"未知按键: {key!r}")
 
 
-# ─── 鼠标操作 ──────────────────────────────────────────────
+# ─── 鼠标操作（SendInput 原子版） ────────────────────────────
 
-def click(x: int, y: int, button: str = "left", clicks: int = 1, interval: float = 0.05):
+def click(x: int, y: int, button: str = "left", clicks: int = 1, interval: float = 0.08):
     """点击指定位置（物理坐标）。
+    
+    使用 SetCursorPos 精确定位 + SendInput 发送按键事件的混合方案：
+    - SetCursorPos 在 DPI-aware 模式下定位精准（delta=0）
+    - SendInput 比 mouse_event 更可靠，不会被 UIPI 阻断
     
     Args:
         x, y: 物理屏幕坐标
@@ -111,10 +160,6 @@ def click(x: int, y: int, button: str = "left", clicks: int = 1, interval: float
         clicks: 点击次数（2 = 双击）
         interval: 多次点击间隔（秒）
     """
-    # 先移动光标
-    ctypes.windll.user32.SetCursorPos(x, y)
-    time.sleep(0.02)  # 等待光标到位
-    
     # 按钮事件映射
     if button == "right":
         down, up = MOUSEEVENTF_RIGHTDOWN, MOUSEEVENTF_RIGHTUP
@@ -123,10 +168,25 @@ def click(x: int, y: int, button: str = "left", clicks: int = 1, interval: float
     else:
         down, up = MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
     
+    # 先精确定位光标
+    ctypes.windll.user32.SetCursorPos(x, y)
+    time.sleep(0.03)  # 等待光标到位 + 窗口焦点稳定
+    
     for i in range(clicks):
-        ctypes.windll.user32.mouse_event(down, 0, 0, 0, 0)
-        time.sleep(0.01)
-        ctypes.windll.user32.mouse_event(up, 0, 0, 0, 0)
+        # 使用 SendInput 发送 down + up（比 mouse_event 更可靠）
+        inputs = (_INPUT * 2)()
+        inputs[0].type = INPUT_MOUSE
+        inputs[0]._input.mi.dwFlags = down
+        inputs[1].type = INPUT_MOUSE
+        inputs[1]._input.mi.dwFlags = up
+        
+        sent = ctypes.windll.user32.SendInput(2, ctypes.byref(inputs), ctypes.sizeof(_INPUT))
+        if sent != 2:
+            # 极端情况回退到 mouse_event
+            ctypes.windll.user32.mouse_event(down, 0, 0, 0, 0)
+            time.sleep(0.02)
+            ctypes.windll.user32.mouse_event(up, 0, 0, 0, 0)
+        
         if i < clicks - 1:
             time.sleep(interval)
 
@@ -139,7 +199,8 @@ def move(x: int, y: int, duration: float = 0):
         duration: 移动耗时（秒），0 = 瞬移
     """
     if duration <= 0:
-        ctypes.windll.user32.SetCursorPos(x, y)
+        abs_x, abs_y = _to_absolute(x, y)
+        _send_mouse_input(MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, abs_x, abs_y)
         return
     
     # 平滑移动
@@ -153,7 +214,8 @@ def move(x: int, y: int, duration: float = 0):
         t = 1 - (1 - t) ** 2
         cur_x = int(start_x + (x - start_x) * t)
         cur_y = int(start_y + (y - start_y) * t)
-        ctypes.windll.user32.SetCursorPos(cur_x, cur_y)
+        abs_cx, abs_cy = _to_absolute(cur_x, cur_y)
+        _send_mouse_input(MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, abs_cx, abs_cy)
         time.sleep(duration / steps)
 
 
@@ -164,6 +226,8 @@ def drag(
     button: str = "left",
 ):
     """拖拽操作。
+    
+    使用 SendInput 原子方式，确保按下和移动的位置一致性。
     
     Args:
         start_x, start_y: 起始物理坐标
@@ -178,12 +242,20 @@ def drag(
     else:
         down, up = MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
     
-    # 移到起点
-    ctypes.windll.user32.SetCursorPos(start_x, start_y)
-    time.sleep(0.05)
+    abs_flags = MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE
     
-    # 按下
-    ctypes.windll.user32.mouse_event(down, 0, 0, 0, 0)
+    # 移到起点并按下（原子操作）
+    abs_sx, abs_sy = _to_absolute(start_x, start_y)
+    inputs = (_INPUT * 2)()
+    inputs[0].type = INPUT_MOUSE
+    inputs[0]._input.mi.dx = abs_sx
+    inputs[0]._input.mi.dy = abs_sy
+    inputs[0]._input.mi.dwFlags = abs_flags
+    inputs[1].type = INPUT_MOUSE
+    inputs[1]._input.mi.dx = abs_sx
+    inputs[1]._input.mi.dy = abs_sy
+    inputs[1]._input.mi.dwFlags = down | abs_flags
+    ctypes.windll.user32.SendInput(2, ctypes.byref(inputs), ctypes.sizeof(_INPUT))
     time.sleep(0.05)
     
     # 平滑移动到终点
@@ -192,27 +264,30 @@ def drag(
         t = i / steps
         cur_x = int(start_x + (end_x - start_x) * t)
         cur_y = int(start_y + (end_y - start_y) * t)
-        ctypes.windll.user32.SetCursorPos(cur_x, cur_y)
+        abs_cx, abs_cy = _to_absolute(cur_x, cur_y)
+        _send_mouse_input(abs_flags, abs_cx, abs_cy)
         time.sleep(duration / steps)
     
     time.sleep(0.05)
-    # 松开
-    ctypes.windll.user32.mouse_event(up, 0, 0, 0, 0)
+    # 松开（在终点位置）
+    abs_ex, abs_ey = _to_absolute(end_x, end_y)
+    _send_mouse_input(up | abs_flags, abs_ex, abs_ey)
 
 
 def scroll(amount: int, x: int | None = None, y: int | None = None):
     """滚轮滚动。
     
     Args:
-        amount: 正数向上，负数向下（每次 120 单位 = 一个缺口）
+        amount: 正数向上，负数向下（1 = 一个滚轮缺口 = 120 单位）
         x, y: 可选，先移动到此位置再滚动
     """
     if x is not None and y is not None:
-        ctypes.windll.user32.SetCursorPos(x, y)
-        time.sleep(0.02)
+        abs_x, abs_y = _to_absolute(x, y)
+        _send_mouse_input(MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, abs_x, abs_y)
+        time.sleep(0.03)
     
     # WHEEL_DELTA = 120
-    ctypes.windll.user32.mouse_event(MOUSEEVENTF_WHEEL, 0, 0, amount * 120, 0)
+    _send_mouse_input(MOUSEEVENTF_WHEEL, mouse_data=amount * 120)
 
 
 # ─── 键盘操作 ──────────────────────────────────────────────

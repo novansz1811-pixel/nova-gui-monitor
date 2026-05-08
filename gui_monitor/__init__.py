@@ -3,4 +3,4 @@
 # 纯 Win32 API，零 GUI 依赖。
 # 用法: python -m gui_monitor --help
 
-__version__ = "2.2.0"
+__version__ = "2.3.0"

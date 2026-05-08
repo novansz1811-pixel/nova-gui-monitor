@@ -33,6 +33,10 @@ def init_dpi():
     _initialized = True
 
 
+# 别名：兼容 mcp_server.py 等使用旧名称的模块
+init_dpi_awareness = init_dpi
+
+
 def get_dpi_scale(monitor_index: int = 0) -> float:
     """获取 DPI 缩放比（1.0 = 100%, 1.5 = 150%, 1.75 = 175%）。
     

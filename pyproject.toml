@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nova-gui-monitor"
-version = "2.3.0"
+version = "2.3.1"
 description = "Nova GUI Monitor — Windows 电脑 GUI 自动化 CLI 工具，纯 Win32 API，零 GUI 依赖"
 readme = "README.md"
 license = {file = "LICENSE"}

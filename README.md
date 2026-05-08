@@ -185,6 +185,12 @@ python -m gui_monitor chat-agent --contact "Linda" --mode auto
 - **Python**: 3.10+
 - **DPI**: 自动适配（支持 100%~250% 缩放）
 
+## 📝 更新日志 (Changelog)
+
+### v2.3.1 (2026-05-08)
+- **修复**: 彻底解决了在 64 位 Python 环境下通过剪贴板 (`Ctrl+V`) 粘贴文本失败的问题。重写了剪贴板模块 (`clipboard.py`)，正确声明了 Win32 API (`OpenClipboard`, `GlobalAlloc` 等) 的参数和返回值类型，防止指针被意外截断。
+- **优化**: 增加了剪贴板读写的重试机制，提高了并发情况下的稳定性。
+
 ## 📄 License
 
 [MIT](LICENSE)
